@@ -1,5 +1,6 @@
 export default {
     fonts:{
-        main: "Roboto Mono"
+        main: "Roboto Mono",
+        logo: "Rock Salt"
     }
 }

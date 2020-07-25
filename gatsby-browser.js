@@ -1,6 +1,7 @@
 import React from "react";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import theme from "./src/themes/theme";
+import SEO from "./src/components/Seo";
 
 const GlobalStyle = createGlobalStyle`
 *{
@@ -12,7 +13,6 @@ const GlobalStyle = createGlobalStyle`
 body, html {
     font-family: ${props => props.theme.fonts.main};
     height: 100%;
-
 }
 
 `;
@@ -20,6 +20,7 @@ body, html {
 export const wrapRootElement = ({element}) => (
 <ThemeProvider theme={theme}>
     <GlobalStyle/>
+    <SEO/>
     {element}
 </ThemeProvider>
 )

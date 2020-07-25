@@ -34,16 +34,7 @@ module.exports = {
               maxWidth: 1220,
             },
           },
-          {
-          resolve: `gatsby-plugin-google-fonts`,
-          options: {
-            fonts: [
-              `roboto mono`,
-              `rock salt`
-              
-            ]
-          }
-          }
+          `gatsby-plugin-react-helmet`
         ],
       },
     },
