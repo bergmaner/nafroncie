@@ -1,7 +1,10 @@
 export default {
     fonts:{
-        main: "Roboto Mono",
+        main: "Indie Flower",
         logo: "Rock Salt",
         second: "Ubuntu"
+    },
+    colors: {
+        main: "#5000ca"
     }
 }

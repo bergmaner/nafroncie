@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const SoldierComponent = styled.svg`
-fill: #5000ca;
+fill: ${props => props.theme.colors.main};
 `;
 
 const Soldier = () => (

@@ -5,7 +5,7 @@ const WaveComponent = styled.svg`
 position: absolute;
 bottom: 0;
 left: 0;
-fill: #5000ca;
+fill: ${props => props.theme.colors.main};
 `;
 
 const Wave = () => (
