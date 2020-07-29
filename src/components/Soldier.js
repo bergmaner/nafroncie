@@ -2,12 +2,12 @@ import React from "react";
 import styled from "styled-components";
 
 const SoldierComponent = styled.svg`
-fill: ${props => props.theme.colors.main};
+fill: ${props => props.theme.colors.main_variant2};
+width: 200px;
 `;
 
 const Soldier = () => (
-    <SoldierComponent version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="200.54px" viewBox="0 0 333.54 800" enable-background="new 0 0 333.54 800" space="preserve" >
+    <SoldierComponent xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 0 333.54 800" >
 <g>
 	<path d="M130.28,536.05c-0.39,0.04-0.61,0.06-0.83,0.08c-1.42,0.1-1.87-0.18-1.92-1.58c-0.08-2.35-0.09-4.71,0-7.06
 		c0.1-2.32-0.17-4.57-0.64-6.83c-0.8-3.86-1.56-7.72-2.31-11.59c-0.16-0.8-0.23-1.63-0.27-2.45c-0.17-3.83-1.73-7.3-2.76-10.91
