@@ -13,7 +13,6 @@ const GlobalStyle = createGlobalStyle`
 body, html {
     font-family: ${props => props.theme.fonts.main};
     height: 100%;
-    background: #F7F7F7;
 
 }
 ::selection {

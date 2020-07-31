@@ -13,7 +13,6 @@ const GlobalStyle = createGlobalStyle`
 body, html {
     font-family: ${props => props.theme.fonts.main};
     height: 100%;
-    background: #F7F7F7;
 }
 ::selection {
     color: white;
@@ -36,10 +35,11 @@ body, html {
   }
 `;
 
-export const wrapRootElement = ({element}) => (
+export const wrapRootElement = ({element}) => {
+    return(
 <ThemeProvider theme={theme}>
     <SEO/>
     <GlobalStyle/>
     {element}
 </ThemeProvider>
-)
+)}

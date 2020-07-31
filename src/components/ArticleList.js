@@ -1,16 +1,22 @@
-import React from "react"
+import React, { useRef } from "react"
 import ArticleElement from "./ArticleElement"
 import styled from "styled-components"
 
 const ArticleContainer = styled.div`
+
 div:nth-child(even){
     flex-direction: row-reverse;
+    background: #F7F7F7;
 }
+
 `;
 
 const ArticleList = () => {
-    return(
-        <ArticleContainer>
+
+ 
+
+  return(
+        <ArticleContainer >
         <ArticleElement
           title="O czym jest ten blog?"
           date="2020-07-25"

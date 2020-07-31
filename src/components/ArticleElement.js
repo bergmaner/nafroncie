@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import Calendar from "./Calendar"
+import Button from "./Button"
 
 const ImageWrapper = styled.div`
   width: 55%;
@@ -10,11 +11,13 @@ const ImageWrapper = styled.div`
 const ContentWrapper = styled.div`
   width: 45%;
   padding: 40px 20px 0px 20px;
+  background: transparent !important;
 `
 
 const Container = styled.div`
   display: flex;
   align-items: flex-start;
+  background: #fff;
 `
 const Image = styled(Img)`
   width: 100%;
@@ -24,9 +27,10 @@ const Categories = styled.div`
   align-items: center;
   justify-content: flex-end;
   margin: 10px 0;
+  background: transparent !important;
 `
 const Category = styled.div`
-  background: ${props => props.theme.colors.main_variant2};
+  background: ${props => props.theme.colors.main_variant2}!important;
   display: inline-block;
   color: #fff;
   font-size: 14px;
@@ -63,6 +67,7 @@ const Header = styled.div`
 display: flex;
 align-items: center;
 justify-content: space-between;
+background: transparent !important;
 `
 
 const ArticleElement = ({ date, title, content, categories }) => {
@@ -91,6 +96,7 @@ const ArticleElement = ({ date, title, content, categories }) => {
           ))}
         </Categories>
         <p>{content}</p>
+        <Button/>
       </ContentWrapper>
     </Container>
   )
