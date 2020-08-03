@@ -30,7 +30,7 @@ const Card = styled.div`
   position: relative;
   width: 6em;
   height: 6em;
-  background-color: #fff;
+  background-color: transparent;
   border-radius: 0.6em;
   box-shadow: 0 1px 0 #000, 0 2px 0 #fff, 0 3px 0 #000, 0 4px 0 #fff,
     0 5px 0 #000, 0 0 0 1px #000;

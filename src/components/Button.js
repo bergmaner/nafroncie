@@ -3,24 +3,26 @@ import styled from "styled-components"
 
 const BlobButton = styled.div`
 	position: relative;
-	width: calc(0.8 * 100px);
+	margin: 20px 0px;
+	width: calc(0.8 * 200px);
 	height: calc(0.7 * 50px);
 	display: flex;
     justify-content: center;
 	align-items: center;
 	cursor: pointer;
     overflow: hidden;
-    border: 2px solid ${props => props.theme.colors.main_variant2};
-	transition: background 0.3s ;
-    background: transparent !important;
-    color: #000;
+	border: 2px solid ${props => props.theme.colors.main_variant2};
+	border-radius: 20px;
+	transition: background ease, color 0.17s ease 0.2s;
+	background: transparent !important;
+	font-weight: 700;
+    color: ${props => props.theme.colors.main_variant2};
 :hover{
-    border: 2px solid #000;
     color: #fff;
 }
 
 	&:hover div{
-		width: calc(2 * 100px);
+		width: calc(2 * 200px);
         height: calc(2 * 50px);
 	}
 
@@ -35,7 +37,6 @@ const BlobButton = styled.div`
 	span{
 		font-size: 1rem;
 		z-index: 3;
-		text-transform: uppercase;
 		letter-spacing: 2px;
     }
     
@@ -53,7 +54,8 @@ const BlobButton = styled.div`
 
 `
 
-const Button = () => {
-  return <BlobButton><span>kk</span><div></div></BlobButton>
+const Button = ({children}) => {
+	
+  return <BlobButton><span>{children}</span><div></div></BlobButton>
 }
 export default Button

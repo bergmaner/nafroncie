@@ -6,6 +6,7 @@ const useOpacity = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      if( ref.current.offsetTop < window.innerHeight)
      setOpacity(1 - 1.1 * ref.current.offsetTop/window.innerHeight);
     }
 
