@@ -4,7 +4,7 @@ import styled from "styled-components"
 const Categories = styled.div`
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   margin: 10px 0;
   background: transparent !important;
 `
@@ -46,7 +46,7 @@ const Category = styled.div`
 const CategoryList = ({ categories }) => {
   return (
     <Categories>
-      {categories.map((category, index) => (
+      {categories?.map((category, index) => (
         <Category key={index}>{category}</Category>
       ))}
     </Categories>

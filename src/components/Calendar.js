@@ -2,26 +2,26 @@ import React from "react"
 import styled from "styled-components"
 
 const Month = styled.strong`
-position: absolute;
-top: 0;
-padding: 0.4em 0;
-color: #fff;
-background-color: ${ props => props.theme.colors.main_variant2};
-box-shadow: 0 2px 0 ${ props => props.theme.colors.main_variant2};
+  position: absolute;
+  top: 0;
+  padding: 0.4em 0;
+  color: #fff;
+  background-color: ${props => props.theme.colors.main_variant2};
+  box-shadow: 0 2px 0 ${props => props.theme.colors.main_variant2};
 `
 
 const Number = styled.span`
-    width: 100%;
-    font-size: 2.5em;
-    letter-spacing: -0.05em;
-    padding-top: 0.8em;
-    color: ${ props => props.theme.colors.main_variant2};
+  width: 100%;
+  font-size: 2.5em;
+  letter-spacing: -0.05em;
+  padding-top: 0.8em;
+  color: ${props => props.theme.colors.main_variant2};
 `
 
 const Day = styled.strong`
-    position: absolute;
-    bottom: 0.3em;
-    color: ${ props => props.theme.colors.main_variant2};
+  position: absolute;
+  bottom: 0.3em;
+  color: ${props => props.theme.colors.main_variant2};
 `
 
 const Card = styled.div`
@@ -41,20 +41,21 @@ const Card = styled.div`
   transform-origin: 50% 10%;
 
   * {
-  display: block;
-  width: 100%;
-  font-weight: bold;
-  font-style: normal;
-  text-align: center;
-}
+    display: block;
+    width: 100%;
+    font-weight: bold;
+    font-style: normal;
+    text-align: center;
+  }
 `
 
-const Calendar = () => {
+const Calendar = ({ date }) => {
+  console.log("datee", date)
   return (
     <Card>
-      <Day>Czwartek</Day>
-      <Month>Lipiec</Month>
-      <Number>30</Number>
+      <Day>{date[0]}</Day>
+      <Month>{date[2].slice(1)}</Month>
+      <Number>{date[1]}</Number>
     </Card>
   )
 }

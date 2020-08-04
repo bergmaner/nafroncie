@@ -15,7 +15,7 @@ const ContentWrapper = styled.div`
   background: transparent !important;
 `
 
-const Container = styled.div`
+const Container = styled.section`
   display: flex;
   align-items: flex-start;
   background: #fff;
@@ -45,6 +45,7 @@ const ArticleElement = ({ date, title, content, categories }) => {
       }
     }
   `)
+  console.log("date",date)
   return (
     <Container>
       <ImageWrapper>
@@ -53,9 +54,9 @@ const ArticleElement = ({ date, title, content, categories }) => {
       <ContentWrapper>
         <Header>
           <h2>{title}</h2>
-          <Calendar />
+          <Calendar date={date.split(" ")}/>
         </Header>
-        <CategoryList categories = {categories.split(",")}/>
+        <CategoryList categories = {categories?.split(",")}/>
         <Paragraph>{content}</Paragraph>
         <Button>Czytaj Więcej</Button>
       </ContentWrapper>
