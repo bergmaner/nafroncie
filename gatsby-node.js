@@ -18,7 +18,7 @@ exports.createPages = async function ({ actions, graphql }) {
   const pagesCount = Math.ceil(data.allMdx.edges.length / postsPerPage)
   Array.from({ length: pagesCount }).forEach((_, i) => {
     actions.createPage({
-      path: i === 0 ? `/` : `/${i + 1}`,
+      path: i === 0 ? `/articles/1` : `/articles/${i + 1}`,
       component: require.resolve("./src/templates/AllArticles.js"),
       context: {
         max: postsPerPage,

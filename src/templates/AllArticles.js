@@ -10,8 +10,8 @@ const AllArticles = ({ pageContext, data }) => {
   const { currentPage, pagesCount } = pageContext
   const isFirst = currentPage === 1
   const isLast = currentPage === pagesCount
-  const prevPage = `${currentPage - 1}`
-  const nextPage = `${currentPage + 1}`
+  const prevPage = `/articles/${currentPage - 1}`
+  const nextPage = `/articles/${currentPage + 1}`
   const articles = data?.allMdx?.edges;
   console.log("data",data, pageContext)
   return (

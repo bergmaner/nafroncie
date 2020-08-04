@@ -13,8 +13,8 @@ const Paginate = styled.div`
 const Pagination = ({ isFirst, isLast, prevPage, nextPage }) => {
   return (
     <Paginate>
-      <Button>Prev</Button>
-      <Button>Next</Button>
+      <Button isPossible={!isFirst} path={prevPage}>Prev</Button>
+      <Button isPossible={!isLast} path={nextPage}>Next</Button>
     </Paginate>
   )
 }

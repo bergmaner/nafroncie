@@ -1,4 +1,5 @@
 import React from "react"
+import { navigate } from "@reach/router"  
 import styled from "styled-components"
 
 const BlobButton = styled.div`
@@ -6,10 +7,11 @@ const BlobButton = styled.div`
 	margin: 20px 0px;
 	width: calc(0.8 * 200px);
 	height: calc(0.7 * 50px);
+	opacity: ${props => props.active || props.active === undefined ? 1 : 0.5};
 	display: flex;
     justify-content: center;
 	align-items: center;
-	cursor: pointer;
+	cursor: ${props => props.active || props.active === undefined ? "pointer" : "default" };
     overflow: hidden;
 	border: 2px solid ${props => props.theme.colors.main_variant2};
 	border-radius: 20px;
@@ -18,12 +20,12 @@ const BlobButton = styled.div`
 	font-weight: 700;
     color: ${props => props.theme.colors.main_variant2};
 :hover{
-    color: #fff;
+	color: ${props => props.active || props.active === undefined ? "#fff" : props.theme.colors.main_variant2};
 }
 
 	&:hover div{
-		width: calc(2 * 200px);
-        height: calc(2 * 50px);
+		width: ${props => props.active || props.active === undefined ? "calc(2 * 200px)" : "0"};
+        height: ${props => props.active || props.active === undefined ? "calc(2 * 50px)" : "0"};
 	}
 
 	&:before{
@@ -54,8 +56,12 @@ const BlobButton = styled.div`
 
 `
 
-const Button = ({children}) => {
+const Button = ({children, path, isPossible}) => {
 	
-  return <BlobButton><span>{children}</span><div></div></BlobButton>
+const goTo = (path) => {
+	if(isPossible)navigate(path)
+}
+
+  return <BlobButton active = {isPossible} onClick = { () => goTo(path) }><span>{children}</span><div></div></BlobButton>
 }
 export default Button

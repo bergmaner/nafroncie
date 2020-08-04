@@ -78,7 +78,7 @@ const Navbar = () => (
         <StyledLink to="/">Na Froncie</StyledLink>
       </Logo>
       <NavItems>
-        <NavItem to="/">
+        <NavItem to="/articles/1">
           <Text>Artykuły</Text>
         </NavItem>
         <NavItem to="/">
