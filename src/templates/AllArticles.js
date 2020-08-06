@@ -4,6 +4,7 @@ import HeroHeader from "../components/HeroHeader"
 import Navbar from "../components/Navbar"
 import ArticleList from "../components/ArticleList"
 import Pagination from "../components/Pagination"
+import {articlesDescription} from "../config"
 
 const AllArticles = ({ pageContext, data }) => {
 
@@ -16,8 +17,8 @@ const AllArticles = ({ pageContext, data }) => {
   console.log("data",data, pageContext)
   return (
     <div>
-      <Navbar />
-      <HeroHeader />
+      <Navbar isArticle/>
+      <HeroHeader description={articlesDescription}/>
       <ArticleList articles={articles} />
       <Pagination
         isFirst={isFirst}

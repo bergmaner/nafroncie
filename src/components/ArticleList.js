@@ -38,6 +38,7 @@ const ArticleList = ({ articles }) => {
         date = {article.node.frontmatter.date}
         title = {article.node.frontmatter.title}
         content = {article.node.frontmatter.content}
+        slug = {article.node.frontmatter.slug}
         categories = {article.node.frontmatter.categories}
         />
       ))}

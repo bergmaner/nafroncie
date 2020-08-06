@@ -50,17 +50,13 @@ const Description = styled.div`
   width: 500px;
 `
 
-const HeroHeader = () => {
-    const { ref, opacity } = useOpacity();
+const HeroHeader = ({ description }) => {
+  const { ref, opacity } = useOpacity()
   return (
-    <Header ref = {ref} opacity={opacity}>
+    <Header ref={ref} opacity={opacity}>
       <Wrapper>
         <Logo>Na Froncie</Logo>
-        <Description>
-          To nie jest blog militarny, choć tak może to wyglądać na pierwszy rzut
-          oka hehe. Zajmuję się Frontendem, choć jestem zaledwie juniorem
-          postaram się rozmawiać o tematach, które mogą cię zaciekawić.
-        </Description>
+        <Description>{description}</Description>
       </Wrapper>
       <ImageWrapper>
         <Soldier />

@@ -34,31 +34,37 @@ const Paragraph = styled.p`
   margin: 20px 0;
 `
 
-const ArticleElement = ({ date, title, content, categories }) => {
+const ArticleElement = ({ date, title, content, categories, slug }) => {
 
   const data = useStaticQuery(graphql`
-    query {
-      imageSharp(fluid: { originalName: { eq: "computer.png" } }) {
-        fluid {
-          ...GatsbyImageSharpFluid
+  query ArticleElementQuery($id: String) {
+    mdx(id: { eq: $id }) {
+      frontmatter {
+        image {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
         }
       }
     }
+  }
   `)
   console.log("date",date)
   return (
     <Container>
       <ImageWrapper>
-        <Image fluid={data.imageSharp.fluid} />
+        <Image fluid={data.mdx.frontmatter.image.childImageSharp.fluid} />
       </ImageWrapper>
       <ContentWrapper>
         <Header>
           <h2>{title}</h2>
-          <Calendar date={date.split(" ")}/>
+          <Calendar date={date?.split(" ")}/>
         </Header>
         <CategoryList categories = {categories?.split(",")}/>
         <Paragraph>{content}</Paragraph>
-        <Button>Czytaj Więcej</Button>
+        <Button path = {`/article/${slug}`} isPossible = {true}>Czytaj Więcej</Button>
       </ContentWrapper>
     </Container>
   )

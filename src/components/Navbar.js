@@ -16,17 +16,18 @@ width: 100%;
 `
 
 const NavItem = styled(Link)`
-  color: #000;
+  color: ${ props => props.isChecked ? "#fff" : "#000"};
   text-decoration: none;
   margin: 0 0.5rem;
   transition: 0.2s all ease;
   width: 100px;
   height: 100px;
+  cursor: ${props => props.isChecked ? "default" : "pointer" };
   display: flex;
   align-items: center;
   justify-content: space-around;
-  transform: rotate(90deg) translateX(-20px);
-  background-color: ${props => props.theme.colors.main_variant3};
+  transform: ${props => props.isChecked ? "rotate(90deg) translateX(0px)" : "rotate(90deg) translateX(-20px)" };
+  background-color: ${props => props.isChecked ? props.theme.colors.main_variant2 : props.theme.colors.main_variant3};
   border-bottom-right-radius: 200px;
   border-top-right-radius: 200px;
   border-left: 0;
@@ -71,14 +72,14 @@ const Text = styled.span`
   padding-top: 10px;
 `
 
-const Navbar = () => (
+const Navbar = ({isArticle}) => (
   <Nav>
     <NavContent>
       <Logo>
         <StyledLink to="/">Na Froncie</StyledLink>
       </Logo>
       <NavItems>
-        <NavItem to="/articles/1">
+        <NavItem isChecked = {isArticle} to="/articles/1">
           <Text>Artykuły</Text>
         </NavItem>
         <NavItem to="/">

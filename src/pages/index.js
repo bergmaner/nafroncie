@@ -1,15 +1,13 @@
 import React from "react"
 import Navbar from "../components/Navbar"
 import HeroHeader from "../components/HeroHeader"
-import ArticleList from "../components/ArticleList"
+import { mainDescription } from "../config"
 
 const Home = () => {
-
   return (
     <div>
       <Navbar />
-      <HeroHeader />
-      {/* <ArticleList /> */}
+      <HeroHeader description={mainDescription} />
     </div>
   )
 }

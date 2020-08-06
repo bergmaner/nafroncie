@@ -14,7 +14,7 @@ exports.createPages = async function ({ actions, graphql }) {
     }
   `)
 
-  const postsPerPage = 3
+  const postsPerPage = 1
   const pagesCount = Math.ceil(data.allMdx.edges.length / postsPerPage)
   Array.from({ length: pagesCount }).forEach((_, i) => {
     actions.createPage({
@@ -28,4 +28,16 @@ exports.createPages = async function ({ actions, graphql }) {
       },
     })
   })
+
+data.allMdx.edges.forEach(edge => {
+  const slug = edge.node.frontmatter.slug
+  const id = edge.node.id
+  actions.createPage({
+    path: `/article/${slug}`,
+    component: require.resolve(`./src/templates/Article.js`),
+    context:{id},
+
+  })
+})
+
 }
