@@ -9,7 +9,7 @@ const Categories = styled.div`
   background: transparent !important;
 `
 const Category = styled.div`
-  background: ${props => props.theme.colors.main_variant2}!important;
+  background: ${props => props.theme.colors.main_variant1}!important;
   display: inline-block;
   color: #fff;
   font-size: 14px;
@@ -32,7 +32,7 @@ const Category = styled.div`
     display: inline-block;
     border: 14px solid;
     border-color: transparent transparent transparent
-      ${props => props.theme.colors.main_variant2};
+      ${props => props.theme.colors.main_variant1};
     height: 0;
     width: 0;
     position: absolute;

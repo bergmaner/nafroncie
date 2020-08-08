@@ -13,14 +13,14 @@ const BlobButton = styled.div`
 	align-items: center;
 	cursor: ${props => props.active || props.active === undefined ? "pointer" : "default" };
     overflow: hidden;
-	border: 2px solid ${props => props.theme.colors.main_variant2};
+	border: 2px solid ${props => props.theme.colors.main_variant1};
 	border-radius: 20px;
 	transition: background ease, color 0.17s ease 0.2s;
 	background: transparent !important;
 	font-weight: 700;
-    color: ${props => props.theme.colors.main_variant2};
+    color: ${props => props.theme.colors.main_variant1};
 :hover{
-	color: ${props => props.active || props.active === undefined ? "#fff" : props.theme.colors.main_variant2};
+	color: ${props => props.active || props.active === undefined ? "#fff" : props.theme.colors.main_variant1};
 }
 
 	&:hover div{
@@ -51,7 +51,7 @@ const BlobButton = styled.div`
         transition: all 2.5s cubic-bezier(0.1, 0.22, .3, 1);
         left: -50%;
 		bottom: -50%;
-        background: ${props => props.theme.colors.main_variant2} !important;
+        background: ${props => props.theme.colors.main_variant1} !important;
 	}
 
 `

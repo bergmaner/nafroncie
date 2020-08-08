@@ -2,8 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 const SoldierComponent = styled.svg`
-fill: ${props => props.theme.colors.main_variant2};
+fill: ${props => props.theme.colors.main_variant1};
 width: 200px;
+z-index: 3;
 `;
 
 const Soldier = () => (

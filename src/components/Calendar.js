@@ -6,8 +6,8 @@ const Month = styled.strong`
   top: 0;
   padding: 0.4em 0;
   color: #fff;
-  background-color: ${props => props.theme.colors.main_variant2};
-  box-shadow: 0 2px 0 ${props => props.theme.colors.main_variant2};
+  background-color: ${props => props.theme.colors.main_variant1};
+  box-shadow: 0 2px 0 ${props => props.theme.colors.main_variant1};
 `
 
 const Number = styled.span`
@@ -15,20 +15,20 @@ const Number = styled.span`
   font-size: 2.5em;
   letter-spacing: -0.05em;
   padding-top: 0.8em;
-  color: ${props => props.theme.colors.main_variant2};
+  color: ${props => props.theme.colors.main_variant1};
 `
 
 const Day = styled.strong`
   position: absolute;
   bottom: 0.3em;
-  color: ${props => props.theme.colors.main_variant2};
+  color: ${props => props.theme.colors.main_variant1};
 `
 
 const Card = styled.div`
   font-size: 0.5em; /* change icon size */
   display: block;
   position: relative;
-  width: 6em;
+  min-width: 6em;
   height: 6em;
   background-color: transparent;
   border-radius: 0.6em;

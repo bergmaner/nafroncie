@@ -38,11 +38,8 @@ const Wrapper = styled.div`
   max-width: 800px;
   font-size: 25px;
   padding: 0 15px;
-  position: absolute;
-  top: 50%;
   z-index: 5;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  align-self: center;
 `
 
 const Description = styled.div`
@@ -54,14 +51,13 @@ const HeroHeader = ({ description }) => {
   const { ref, opacity } = useOpacity()
   return (
     <Header ref={ref} opacity={opacity}>
-      <Wrapper>
+
+      <ImageWrapper>
+        <Soldier />
+        <Wrapper>
         <Logo>Na Froncie</Logo>
         <Description>{description}</Description>
       </Wrapper>
-      <ImageWrapper>
-        <Soldier />
-        <Soldier />
-        <Soldier />
         <Soldier />
         <Wave />
       </ImageWrapper>

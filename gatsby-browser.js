@@ -1,7 +1,7 @@
-import React from "react";
-import { createGlobalStyle, ThemeProvider } from "styled-components";
-import theme from "./src/themes/theme";
-import SEO from "./src/components/Seo";
+import React from "react"
+import { createGlobalStyle, ThemeProvider } from "styled-components"
+import theme from "./src/themes/theme"
+import SEO from "./src/components/Seo"
 
 const GlobalStyle = createGlobalStyle`
 *{
@@ -16,9 +16,21 @@ body, html {
     height: 100%;
 
 }
+
+h1 {
+  font-size: 40px;
+  @media${props => props.theme.breakpoints.lg}{
+    font-size: 35px;
+  }
+}
+
+h2 {
+  font-size: 35px;
+}
+
 ::selection {
     color: white;
-    background: ${props => props.theme.colors.main_variant2};
+    background: ${props => props.theme.colors.main_variant1};
   }
   ::-webkit-scrollbar {
     width: 1em;
@@ -30,17 +42,17 @@ body, html {
   }
    
   ::-webkit-scrollbar-thumb {
-    background-color: ${props => props.theme.colors.main_variant3};
+    background-color: ${props => props.theme.colors.main_variant2};
     outline: none;
     border-radius: 20px;
   }
 
-`;
+`
 
-export const wrapRootElement = ({element}) => (
-<ThemeProvider theme={theme}>
-    <GlobalStyle/>
-    <SEO/>
+export const wrapRootElement = ({ element }) => (
+  <ThemeProvider theme={theme}>
+    <GlobalStyle />
+    <SEO />
     {element}
-</ThemeProvider>
+  </ThemeProvider>
 )

@@ -2,24 +2,29 @@ import React from "react"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { MDXProvider } from "@mdx-js/react"
+import ReactDisqusComments from "react-disqus-comments"
 import Navbar from "../components/Navbar"
 import HeroHeader from "../components/HeroHeader"
 import Calendar from "../components/Calendar"
 import Title from "../components/mdx/Title"
-import Img from "gatsby-image"
+import H2 from "../components/mdx/H2"
+import Text from "../components/mdx/Text"
 import { articlesDescription } from "../config"
 import styled from "styled-components"
 
 const Container = styled.div`
   background: #fff;
-  padding: 5px 20px;
+  padding: 10%;
 `
 
 const Header = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding-top: 20px;
+  align-items: flex-start;
+  padding: 20px 0 30px 0;
+`
+const Comments = styled.div`
+  padding: 40px 0;
 `
 
 const Article = ({ data }) => {
@@ -33,17 +38,21 @@ const Article = ({ data }) => {
       <MDXProvider
         components={{
           h1: Title,
+          h2: H2,
+          div: Text,
         }}
       >
         <Navbar isArticle />
-        <HeroHeader description={articlesDescription}/>
+        <HeroHeader description={articlesDescription} />
         <Container>
           <Header>
             <h1>{title}</h1>
             <Calendar date={date.split(" ")} />
           </Header>
-          <Img fluid={image}/>
           <MDXRenderer>{body}</MDXRenderer>
+          <Comments>
+            <ReactDisqusComments shortname="na-froncie" />
+          </Comments>
         </Container>
       </MDXProvider>
     </div>

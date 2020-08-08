@@ -14,9 +14,20 @@ body, html {
     font-family: ${props => props.theme.fonts.main};
     height: 100%;
 }
+h1 {
+  font-size: 40px;
+  @media${props => props.theme.breakpoints.lg}{
+    font-size: 35px;
+  }
+}
+
+h2 {
+  font-size: 35px;
+}
+
 ::selection {
     color: white;
-    background: ${props => props.theme.colors.main_variant2};
+    background: ${props => props.theme.colors.main_variant1};
   }
 
   ::-webkit-scrollbar {
@@ -29,7 +40,7 @@ body, html {
   }
    
   ::-webkit-scrollbar-thumb {
-    background-color: ${props => props.theme.colors.main_variant3};
+    background-color: ${props => props.theme.colors.main_variant2};
     outline: none;
     border-radius: 20px;
   }

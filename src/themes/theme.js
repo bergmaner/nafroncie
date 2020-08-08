@@ -5,9 +5,9 @@ export default {
         second: "Ubuntu"
     },
     colors: {
-        main_variant1: "rgba(80, 0, 202, 0.9)",
-        main_variant2: "rgba(80, 0, 202, 0.7)",
-        main_variant3: "rgba(80, 0, 202, 0.6)",
+        main_variant1: "rgba(158, 67, 209, 1)",
+        main_variant2: "#8837B8",
+        main_variant3: "rgba(158, 67, 209, 0.65)",
     },
     breakpoints: {
         xs: `(max-width: 399px)`,

@@ -8,17 +8,27 @@ import CategoryList from "./CategoryList"
 
 const ImageWrapper = styled.div`
   width: 55%;
+  @media ${props => props.theme.breakpoints.md}{
+    width: 100%;
+    }
 `
 const ContentWrapper = styled.div`
   width: 45%;
   padding: 40px 20px 0px 20px;
-  background: transparent !important;
+  @media ${props => props.theme.breakpoints.md}{
+  width: 100%;
+  }
 `
 
 const Container = styled.section`
   display: flex;
   align-items: flex-start;
+  justify-content: center;
   background: #fff;
+   @media ${props => props.theme.breakpoints.md}{
+     flex-direction: column;
+     align-items: center;
+   }
 `
 const Image = styled(Img)`
   width: 100%;
@@ -26,7 +36,8 @@ const Image = styled(Img)`
 
 const Header = styled.div`
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  align-items: flex-start;
   justify-content: space-between;
   background: transparent !important;
 `
@@ -59,7 +70,7 @@ const ArticleElement = ({ date, title, content, categories, slug }) => {
       </ImageWrapper>
       <ContentWrapper>
         <Header>
-          <h2>{title}</h2>
+          <h1>{title}</h1>
           <Calendar date={date?.split(" ")}/>
         </Header>
         <CategoryList categories = {categories?.split(",")}/>
