@@ -5,6 +5,9 @@ const SoldierComponent = styled.svg`
 fill: ${props => props.theme.colors.main_variant1};
 width: 200px;
 z-index: 3;
+@media${props => props.theme.breakpoints.lg}{
+	display: none;
+ }
 `;
 
 const Soldier = () => (

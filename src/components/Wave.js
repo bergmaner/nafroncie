@@ -6,6 +6,9 @@ position: absolute;
 bottom: 0;
 left: 0;
 fill: ${props => props.theme.colors.main_variant2};
+@media${props => props.theme.breakpoints.lg}{
+    display: none;
+ }
 `;
 
 const Wave = () => (

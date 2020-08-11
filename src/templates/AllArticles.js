@@ -18,7 +18,7 @@ const AllArticles = ({ pageContext, data }) => {
   return (
     <div>
       <Navbar isArticle/>
-      <HeroHeader description={articlesDescription}/>
+      <HeroHeader path="#articlesList" name= "Artykuły" description={articlesDescription}/>
       <ArticleList articles={articles} />
       <Pagination
         isFirst={isFirst}

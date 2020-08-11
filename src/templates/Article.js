@@ -43,7 +43,7 @@ const Article = ({ data }) => {
         }}
       >
         <Navbar isArticle />
-        <HeroHeader description={articlesDescription} />
+        <HeroHeader name="Artykuły" description={articlesDescription} />
         <Container>
           <Header>
             <h1>{title}</h1>

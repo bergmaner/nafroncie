@@ -1,7 +1,8 @@
-import React, { useRef } from "react"
+import React from "react"
 import styled from "styled-components"
 import Wave from "./Wave"
 import Soldier from "./Soldier"
+import Arrow from "./Arrow"
 import useOpacity from "../hooks/useOpacity"
 
 const Header = styled.div`
@@ -10,11 +11,12 @@ const Header = styled.div`
   opacity: ${props => props.opacity};
   top: 0;
   left: 0;
-  z-index: -1;
+  z-index: ${props => props.zIndex};
   background-color: #ffffff;
   background-image: url(${require("../images/background.svg")});
   overflow: hidden;
 `
+
 
 const Logo = styled.div`
   font-size: 35px;
@@ -30,9 +32,7 @@ width: 100%;
 display: flex;
 justify-content: space-around;
 align-items: flex-end;
-@media${props => props.theme.breakpoints.lg}{
-   display: none;
-}
+
 `
 const Wrapper = styled.div`
   max-width: 800px;
@@ -44,19 +44,20 @@ const Wrapper = styled.div`
 
 const Description = styled.div`
   line-height: 1.5;
-  width: 500px;
+  max-width: 600px;
 `
 
-const HeroHeader = ({ description }) => {
-  const { ref, opacity } = useOpacity()
+const HeroHeader = ({ description, name }) => {
+  const { ref, opacity, zIndex } = useOpacity()
   return (
-    <Header ref={ref} opacity={opacity}>
+    <Header ref={ref} opacity={opacity} zIndex ={zIndex}>
 
       <ImageWrapper>
         <Soldier />
         <Wrapper>
-        <Logo>Na Froncie</Logo>
-        <Description>{description}</Description>
+        <Logo>{name}</Logo>
+        <Description>{description}<Arrow path="#articlesList"/></Description>
+
       </Wrapper>
         <Soldier />
         <Wave />

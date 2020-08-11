@@ -3,12 +3,12 @@ import Navbar from "../components/Navbar"
 import HeroHeader from "../components/HeroHeader"
 import { mainDescription } from "../config"
 
-const Home = () => {
+const About = () => {
   return (
     <div>
-      <Navbar />
-      <HeroHeader name="Na froncie" description={mainDescription} />
+      <Navbar isAbout />
+      <HeroHeader name= "O mnie" description= "kkk" />
     </div>
   )
 }
-export default Home
+export default About
