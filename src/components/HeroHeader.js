@@ -47,7 +47,7 @@ const Description = styled.div`
   max-width: 600px;
 `
 
-const HeroHeader = ({ description, name }) => {
+const HeroHeader = ({ description, name, path }) => {
   const { ref, opacity, zIndex } = useOpacity()
   return (
     <Header ref={ref} opacity={opacity} zIndex ={zIndex}>
@@ -56,7 +56,7 @@ const HeroHeader = ({ description, name }) => {
         <Soldier />
         <Wrapper>
         <Logo>{name}</Logo>
-        <Description>{description}<Arrow path="#articlesList"/></Description>
+        <Description>{description}<Arrow path={path}/></Description>
 
       </Wrapper>
         <Soldier />

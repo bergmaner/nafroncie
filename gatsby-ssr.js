@@ -25,6 +25,14 @@ h2 {
   font-size: 35px;
 }
 
+h3 {
+  font-size: 30px;
+}
+
+h4 {
+  font-size: 25px;
+}
+
 ::selection {
     color: white;
     background: ${props => props.theme.colors.main_variant1};
