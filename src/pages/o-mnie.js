@@ -7,7 +7,7 @@ const About = () => {
   return (
     <div>
       <Navbar isAbout />
-      <HeroHeader name= "O mnie" description= "kkk" />
+      <HeroHeader name= "O mnie" description= "O mnie" />
     </div>
   )
 }

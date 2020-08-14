@@ -1,28 +1,31 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import Input from "./Input"
 import SubmitButton from "./SubmitButton"
+import addToMailchimp from "gatsby-plugin-mailchimp"
+import Notification from "./Notification"
 
 const Container = styled.div`
   color: black;
   background: #fff;
   padding: 10%;
+  overflow: hidden;
 `
 
 const Informations = styled.ol`
   margin: 15px 5px;
   clear: both;
   list-style: none;
-  li{
-      margin: 10px;
-      font-size: 18px;
-      margin: 2em 0;
-      padding-top: 2em;
-      display: block;
-      position: relative;
-      counter-increment: inst;
+  li {
+    margin: 10px;
+    font-size: 18px;
+    margin: 2em 0;
+    padding-top: 2em;
+    display: block;
+    position: relative;
+    counter-increment: inst;
   }
-  li:before{
+  li:before {
     content: counter(inst);
     background: ${props => props.theme.colors.main_variant2};
     color: #fff;
@@ -41,7 +44,6 @@ const Informations = styled.ol`
     width: 1.35em;
     position: absolute;
     transition: all 0.2s ease-in-out;
-    
   }
 `
 
@@ -61,11 +63,34 @@ const NewsletterContainer = styled.div`
   }
 `
 const Info = styled.div`
-margin: 15px 0;
-font-size: 18px;
-`;
+  margin: 15px 0;
+  font-size: 18px;
+`
 
 const Newsletter = () => {
+  const [email, setEmail] = useState("")
+  const [active, setActive] = useState(undefined)
+  const [status, setStatus] = useState("")
+  const [message, setMessage] = useState("")
+  const handleSubmit = e => {
+    e.preventDefault()
+    setActive(true)
+    addToMailchimp(email)
+      .then(data => {
+        console.log(data)
+        setStatus(data.result)
+        switch (data.result) {
+          case "error":
+            setMessage("Podany email jest nieprawidłowy")
+            break
+          case "success":
+            setMessage("Gratulacje! Zapisałeś się do Newslettera")
+            break
+        }
+      })
+      .catch(() => {})
+    setEmail("")
+  }
   return (
     <Container>
       <NewsletterContainer>
@@ -76,8 +101,19 @@ const Newsletter = () => {
           <li>Brak Spamu</li>
           <li>Nowości z frontendowego świata</li>
         </Informations>
-        <Input placeholder="Twój adres e-mail"/>
-        <SubmitButton/>
+        <Notification
+          message={message}
+          active={active}
+          status={status}
+          handleClose={setActive}
+        />
+        <Input
+          placeholder="Twój adres e-mail"
+          type="email"
+          value={email}
+          onChange={setEmail}
+        />
+        <SubmitButton onClick={handleSubmit} />
         <Info>Dołącz do innych subskrybentów.</Info>
       </NewsletterContainer>
     </Container>

@@ -16,7 +16,7 @@ width: 70%;
 }
 `;
 
-const Input = ({ placeholder }) => {
-  return <InputEl placeholder={placeholder} />
+const Input = ({ placeholder, value, onChange, type }) => {
+  return <InputEl type={type} placeholder={placeholder} value={value} onChange={ (e) => onChange(e.target.value)} />
 }
 export default Input

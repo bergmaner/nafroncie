@@ -21,6 +21,13 @@ module.exports = {
         path: `${__dirname}/src/articles`,
       },
     },
+    {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+          endpoint: 'https://gmail.us17.list-manage.com/subscribe/post?u=03e23942302ad18e780dc3bf3&amp;id=9481b2986d',
+          timeout: 3500,
+      },
+    },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {

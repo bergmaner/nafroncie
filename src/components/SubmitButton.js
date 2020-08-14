@@ -18,7 +18,7 @@ const Button = styled.button`
   }
 `
 
-const SubmitButton = () => {
-  return <Button>Subskrybuj</Button>
+const SubmitButton = ({onClick}) => {
+  return <Button onClick={onClick}>Subskrybuj</Button>
 }
 export default SubmitButton
