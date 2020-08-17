@@ -4,7 +4,7 @@ import { FaExclamationCircle, FaTimes } from "react-icons/fa"
 
 const show_slide = keyframes`
     0%{
-      transform: translateX(150%);
+      transform: translateX(400%);
     }
     40%{
       transform: translateX(-10%);
@@ -27,7 +27,7 @@ const hide_slide = keyframes`
       transform: translateX(-10%);
     }
     100%{
-      transform: translateX(150%);
+      transform: translateX(400%);
     }`
 
 const showSlide = () =>

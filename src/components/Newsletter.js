@@ -1,9 +1,10 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import Input from "./Input"
 import SubmitButton from "./SubmitButton"
 import addToMailchimp from "gatsby-plugin-mailchimp"
 import Notification from "./Notification"
+import useInterval from "../hooks/useInterval"
 
 const Container = styled.div`
   color: black;
@@ -74,7 +75,7 @@ const Newsletter = () => {
   const [message, setMessage] = useState("")
   const handleSubmit = e => {
     e.preventDefault()
-    setActive(true)
+    setActive(true);
     addToMailchimp(email)
       .then(data => {
         console.log(data)
@@ -91,6 +92,9 @@ const Newsletter = () => {
       .catch(() => {})
     setEmail("")
   }
+  useInterval(() => {
+    if(active === true)setActive(false);
+  }, 3000);
   return (
     <Container>
       <NewsletterContainer>

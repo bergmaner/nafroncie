@@ -79,6 +79,7 @@ span:nth-child(4) {
 
 const Arrow = ({path}) => {
   return (
+      path ? 
       <Link to={path}>
     <ArrowIcon>
         <span></span>
@@ -86,7 +87,7 @@ const Arrow = ({path}) => {
         <span></span>
         <span></span>
     </ArrowIcon>
-    </Link>
+    </Link> : null
   )
 }
 export default Arrow

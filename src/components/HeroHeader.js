@@ -3,6 +3,7 @@ import styled from "styled-components"
 import Wave from "./Wave"
 import Soldier from "./Soldier"
 import Arrow from "./Arrow"
+import Logo from "./Logo"
 import useOpacity from "../hooks/useOpacity"
 
 const Header = styled.div`
@@ -17,22 +18,15 @@ const Header = styled.div`
   overflow: hidden;
 `
 
-
-const Logo = styled.div`
-  font-size: 35px;
-  padding: 0 0 0 50px;
-  font-family: ${props => props.theme.fonts.logo};
-`
 const ImageWrapper = styled.div`
-position: absolute;
-right: 0;
-bottom: 0;
-height:100vh;
-width: 100%;
-display: flex;
-justify-content: space-around;
-align-items: flex-end;
-
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
 `
 const Wrapper = styled.div`
   max-width: 800px;
@@ -50,15 +44,16 @@ const Description = styled.div`
 const HeroHeader = ({ description, name, path }) => {
   const { ref, opacity, zIndex } = useOpacity()
   return (
-    <Header ref={ref} opacity={opacity} zIndex ={zIndex}>
-
+    <Header ref={ref} opacity={opacity} zIndex={zIndex}>
       <ImageWrapper>
         <Soldier />
         <Wrapper>
-        <Logo>{name}</Logo>
-        <Description>{description}<Arrow path={path}/></Description>
-
-      </Wrapper>
+          <Logo name={name} />
+          <Description>
+            {description}
+            <Arrow path={path} />
+          </Description>
+        </Wrapper>
         <Soldier />
         <Wave />
       </ImageWrapper>
