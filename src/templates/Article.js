@@ -4,6 +4,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import { MDXProvider } from "@mdx-js/react"
 import ReactDisqusComments from "react-disqus-comments"
 import Navbar from "../components/Navbar"
+import StickyNavbar from "../components/StickyNavbar"
 import HeroHeader from "../components/HeroHeader"
 import Calendar from "../components/Calendar"
 import Title from "../components/mdx/Title"
@@ -43,6 +44,7 @@ const Article = ({ data }) => {
         }}
       >
         <Navbar isArticle />
+        <StickyNavbar/>
         <HeroHeader name="Artykuły" description={articlesDescription} />
         <Container>
           <Header>

@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import HeroHeader from "../components/HeroHeader"
 import Navbar from "../components/Navbar"
+import StickyNavbar from "../components/StickyNavbar"
 import ArticleList from "../components/ArticleList"
 import Pagination from "../components/Pagination"
 import {articlesDescription} from "../config"
@@ -18,6 +19,7 @@ const AllArticles = ({ pageContext, data }) => {
   return (
     <div>
       <Navbar isArticle/>
+      <StickyNavbar/>
       <HeroHeader path="#articlesList" name= "Artykuły" description={articlesDescription}/>
       <ArticleList articles={articles} />
       <Pagination

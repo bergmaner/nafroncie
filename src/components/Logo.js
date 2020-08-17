@@ -12,8 +12,8 @@ const Logo = ({name}) => {
         <LogoContainer>
         {" "}
         <Typical
-          steps={["",1000,name]}
-          loop={1}
+          steps={["",2000,name, 6000]}
+          loop={Infinity}
         />
       </LogoContainer>
     )

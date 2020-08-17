@@ -7,7 +7,7 @@ width: 100%;
   height: 60px;
   justify-content: center;
   z-index:5;
-  background: transparent
+  background: transparent;
   align-items: center;
   position: absolute;
   top: 0;
