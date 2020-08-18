@@ -1,6 +1,6 @@
 import React from "react"
-import Navbar from "../components/Navbar"
-import HeroHeader from "../components/HeroHeader"
+import Navbar from "../components/nav/Navbar"
+import HeroHeader from "../components/hero/HeroHeader"
 import { mainDescription } from "../config"
 
 const Home = () => {

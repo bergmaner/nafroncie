@@ -1,8 +1,8 @@
 import React, { useRef } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import usePosition from "../hooks/usePosition"
-import useScroll from "../hooks/useScroll"
+import usePosition from "../../hooks/usePosition"
+import useScroll from "../../hooks/useScroll"
 
 const Logo = styled.div`
   font-family: ${props => props.theme.fonts.logo};

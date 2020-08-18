@@ -2,8 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
-import Calendar from "./Calendar"
-import Button from "./Button"
+import Calendar from "../Calendar"
+import Button from "../Button"
 import CategoryList from "./CategoryList"
 
 const ImageWrapper = styled.div`

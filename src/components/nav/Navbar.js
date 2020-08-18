@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
+import Hamburger from "./Hamburger"
 
 const Nav = styled.div`
 width: 100%;
@@ -93,6 +94,7 @@ const Navbar = ({ isArticle, isNewsletter, isAbout }) => (
         <NavItem isChecked={isAbout} to="/o-mnie">
           <Text>O mnie</Text>
         </NavItem>
+        <Hamburger/>
       </NavItems>
     </NavContent>
   </Nav>

@@ -1,7 +1,7 @@
 import React from "react"
-import Navbar from "../components/Navbar"
-import StickyNavbar from "../components/StickyNavbar"
-import HeroHeader from "../components/HeroHeader"
+import Navbar from "../components/nav/Navbar"
+import StickyNavbar from "../components/nav/StickyNavbar"
+import HeroHeader from "../components/hero/HeroHeader"
 import Newsletter from "../components/Newsletter"
 import { newsletterDescription } from "../config"
 

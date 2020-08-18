@@ -4,7 +4,7 @@ import Wave from "./Wave"
 import Soldier from "./Soldier"
 import Arrow from "./Arrow"
 import Logo from "./Logo"
-import useOpacity from "../hooks/useOpacity"
+import useOpacity from "../../hooks/useOpacity"
 
 const Header = styled.div`
   height: 100vh;
@@ -14,7 +14,7 @@ const Header = styled.div`
   left: 0;
   z-index: ${props => props.zIndex};
   background-color: #ffffff;
-  background-image: url(${require("../images/background.svg")});
+  background-image: url(${require("../../images/background.svg")});
   overflow: hidden;
 `
 

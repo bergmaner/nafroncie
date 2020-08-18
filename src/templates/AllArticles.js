@@ -1,9 +1,9 @@
 import React from "react"
 import { graphql } from "gatsby"
-import HeroHeader from "../components/HeroHeader"
-import Navbar from "../components/Navbar"
-import StickyNavbar from "../components/StickyNavbar"
-import ArticleList from "../components/ArticleList"
+import HeroHeader from "../components/hero/HeroHeader"
+import Navbar from "../components/nav/Navbar"
+import StickyNavbar from "../components/nav/StickyNavbar"
+import ArticleList from "../components/article/ArticleList"
 import Pagination from "../components/Pagination"
 import {articlesDescription} from "../config"
 
