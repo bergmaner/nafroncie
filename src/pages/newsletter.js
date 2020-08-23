@@ -8,7 +8,7 @@ import { newsletterDescription } from "../config"
 const NewsletterPage = () => {
   return (
     <div>
-      <Navbar isNewsletter />
+      <Navbar activeIndex={1} />
       <StickyNavbar/>
       <HeroHeader name="Newsletter" description={newsletterDescription} />
       <Newsletter/>

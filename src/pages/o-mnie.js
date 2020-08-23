@@ -7,7 +7,7 @@ import { mainDescription } from "../config"
 const About = () => {
   return (
     <div>
-      <Navbar isAbout />
+      <Navbar activeIndex={2} />
       <StickyNavbar/>
       <HeroHeader name= "O mnie" description= "O mnie" />
     </div>

@@ -18,7 +18,7 @@ const AllArticles = ({ pageContext, data }) => {
   console.log("data",data, pageContext)
   return (
     <div>
-      <Navbar isArticle/>
+      <Navbar activeIndex={0}/>
       <StickyNavbar/>
       <HeroHeader path="#articlesList" name= "Artykuły" description={articlesDescription}/>
       <ArticleList articles={articles} />

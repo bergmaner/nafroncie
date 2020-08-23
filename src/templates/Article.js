@@ -43,7 +43,7 @@ const Article = ({ data }) => {
           div: Text,
         }}
       >
-        <Navbar isArticle />
+        <Navbar activeIndex={0} />
         <StickyNavbar/>
         <HeroHeader name="Artykuły" description={articlesDescription} />
         <Container>
