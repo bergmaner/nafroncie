@@ -5,6 +5,7 @@ import usePosition from "../../hooks/usePosition"
 import useScroll from "../../hooks/useScroll"
 import Hamburger from "./Hamburger"
 import Sidebar from "./Sidebar"
+import { menu } from "../../config"
 
 const Logo = styled.div`
   display: inline-block;
@@ -47,14 +48,6 @@ const Nav = styled.nav`
   align-items: center;
   height: 80px;
   transition: all 0.4s;
-  a {
-    position: relative;
-    margin: 0 20px;
-    padding: 0;
-    font-size: 18px;
-    color: #000;
-    text-decoration: none;
-  }
   @media${props => props.theme.breakpoints.sm}{
     justify-content: space-between;
   }
@@ -75,8 +68,16 @@ const HamIcon = styled.div`
     right: 0;
   }
 `
+const MenuItem = styled(Link)`
+  position: relative;
+  padding: 20px;
+  font-size: 18px;
+  color: ${props =>
+    props.selected ? props.theme.colors.main_variant1 : "#000"};
+  text-decoration: none;
+`
 
-const StickyNavbar = () => {
+const StickyNavbar = ({ activeIndex }) => {
   const articlesItem = useRef()
   const newsletterItem = useRef()
   const aboutItem = useRef()
@@ -86,39 +87,34 @@ const StickyNavbar = () => {
     newsletterItem,
     aboutItem
   )
+  const refs = [articlesItem, newsletterItem, aboutItem]
   const { scrollVisible } = useScroll()
-  console.log("ole", xPos)
   return (
     <>
-    <Nav open={open} scrollVisible={scrollVisible}>
-      <Logo>
-        <Link to="/">Na Froncie</Link>
-      </Logo>
-      <Menu open={open}>
-        <Marker open={open} xPos={xPos} width={width} />
-        <Link
-          onMouseEnter={() => setIndex(1)}
-          ref={articlesItem}
-          to="/articles/1"
-        >
-          Artykuły
-        </Link>
-        <Link
-          onMouseEnter={() => setIndex(2)}
-          ref={newsletterItem}
-          to="/newsletter"
-        >
-          Newsletter
-        </Link>
-        <Link onMouseEnter={() => setIndex(3)} ref={aboutItem} to="/o-mnie">
-          O mnie
-        </Link>
-      </Menu>
-      <HamIcon>
-        <Hamburger open={open} setOpen={setOpen} />
-      </HamIcon>
-    </Nav>
-    <Sidebar open={open}/>
+      <Nav open={open} scrollVisible={scrollVisible}>
+        <Logo>
+          <Link to="/">Na Froncie</Link>
+        </Logo>
+        <Menu open={open}>
+          <Marker open={open} xPos={xPos} width={width} />
+          {menu.map((item, i) => (
+            <MenuItem
+              selected={i === activeIndex}
+              onMouseEnter={() => setIndex(i + 1)}
+              onMouseLeave={() => {
+                setIndex(activeIndex + 1)
+              }}
+              to={item.path}
+            >
+              <div ref={refs[i]}>{item.content}</div>
+            </MenuItem>
+          ))}
+        </Menu>
+        <HamIcon>
+          <Hamburger open={open} setOpen={setOpen} />
+        </HamIcon>
+      </Nav>
+      <Sidebar open={open} />
     </>
   )
 }

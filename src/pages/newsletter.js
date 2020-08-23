@@ -1,18 +1,13 @@
 import React from "react"
-import Navbar from "../components/nav/Navbar"
-import StickyNavbar from "../components/nav/StickyNavbar"
-import HeroHeader from "../components/hero/HeroHeader"
+import Layout from "../components/Layout"
 import Newsletter from "../components/Newsletter"
 import { newsletterDescription } from "../config"
 
 const NewsletterPage = () => {
   return (
-    <div>
-      <Navbar activeIndex={1} />
-      <StickyNavbar/>
-      <HeroHeader name="Newsletter" description={newsletterDescription} />
+    <Layout name="Newsletter" description={newsletterDescription} activeIndex={1}>
       <Newsletter/>
-    </div>
+    </Layout>
   )
 }
 export default NewsletterPage

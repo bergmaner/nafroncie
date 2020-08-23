@@ -1,16 +1,9 @@
 import React from "react"
-import Navbar from "../components/nav/Navbar"
-import StickyNavbar from "../components/nav/StickyNavbar"
-import HeroHeader from "../components/hero/HeroHeader"
-import { mainDescription } from "../config"
+import Layout from "../components/Layout"
 
 const About = () => {
   return (
-    <div>
-      <Navbar activeIndex={2} />
-      <StickyNavbar/>
-      <HeroHeader name= "O mnie" description= "O mnie" />
-    </div>
+<Layout activeIndex={2} name= "O mnie" description= "O mnie"></Layout>
   )
 }
 export default About

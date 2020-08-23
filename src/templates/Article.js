@@ -3,9 +3,7 @@ import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { MDXProvider } from "@mdx-js/react"
 import ReactDisqusComments from "react-disqus-comments"
-import Navbar from "../components/nav/Navbar"
-import StickyNavbar from "../components/nav/StickyNavbar"
-import HeroHeader from "../components/hero/HeroHeader"
+import Layout from "../components/Layout"
 import Calendar from "../components/Calendar"
 import Title from "../components/mdx/Title"
 import H2 from "../components/mdx/H2"
@@ -35,7 +33,7 @@ const Article = ({ data }) => {
   const date = data.mdx.frontmatter.date
   console.log("im", image)
   return (
-    <div>
+    <>
       <MDXProvider
         components={{
           h1: Title,
@@ -43,9 +41,7 @@ const Article = ({ data }) => {
           div: Text,
         }}
       >
-        <Navbar activeIndex={0} />
-        <StickyNavbar/>
-        <HeroHeader name="Artykuły" description={articlesDescription} />
+<Layout activeIndex={0} name= "Artykuły" description={articlesDescription}>
         <Container>
           <Header>
             <h1>{title}</h1>
@@ -56,8 +52,9 @@ const Article = ({ data }) => {
             <ReactDisqusComments shortname="na-froncie" />
           </Comments>
         </Container>
+        </Layout>
       </MDXProvider>
-    </div>
+    </>
   )
 }
 export default Article

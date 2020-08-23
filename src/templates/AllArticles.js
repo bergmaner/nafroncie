@@ -1,8 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import HeroHeader from "../components/hero/HeroHeader"
-import Navbar from "../components/nav/Navbar"
-import StickyNavbar from "../components/nav/StickyNavbar"
+import Layout from "../components/Layout"
 import ArticleList from "../components/article/ArticleList"
 import Pagination from "../components/Pagination"
 import {articlesDescription} from "../config"
@@ -15,12 +13,8 @@ const AllArticles = ({ pageContext, data }) => {
   const prevPage = `/articles/${currentPage - 1}`
   const nextPage = `/articles/${currentPage + 1}`
   const articles = data?.allMdx?.edges;
-  console.log("data",data, pageContext)
   return (
-    <div>
-      <Navbar activeIndex={0}/>
-      <StickyNavbar/>
-      <HeroHeader path="#articlesList" name= "Artykuły" description={articlesDescription}/>
+    <Layout activeIndex={0} name= "Artykuły" description={articlesDescription} path="#articlesList">
       <ArticleList articles={articles} />
       <Pagination
         isFirst={isFirst}
@@ -28,7 +22,7 @@ const AllArticles = ({ pageContext, data }) => {
         prevPage={prevPage}
         nextPage={nextPage}
       />
-    </div>
+ </Layout>
   )
 }
 export default AllArticles;
