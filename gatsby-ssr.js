@@ -15,23 +15,45 @@ body, html {
     height: 100%;
 }
 h1 {
-  font-size: 40px;
+  font-size: ${props => props.theme.sizes.h1.normal};
   @media${props => props.theme.breakpoints.lg}{
-    font-size: 35px;
+    font-size: ${props => props.theme.sizes.h1.lg};
+  }
+   @media${props => props.theme.breakpoints.md}{
+    font-size: ${props => props.theme.sizes.h1.md};
+  }
+  @media${props => props.theme.breakpoints.sm}{
+    font-size: ${props => props.theme.sizes.h1.sm};
   }
 }
 
 h2 {
-  font-size: 35px;
+  font-size: ${props => props.theme.sizes.h2.normal};
+  @media${props => props.theme.breakpoints.lg}{
+    font-size: ${props => props.theme.sizes.h2.lg};
+  }
+  @media${props => props.theme.breakpoints.md}{
+    font-size: ${props => props.theme.sizes.h2.md};
+  }
+  @media${props => props.theme.breakpoints.sm}{
+    font-size: ${props => props.theme.sizes.h2.sm};
+  }
 }
 
 h3 {
-  font-size: 30px;
+  font-size: ${props => props.theme.sizes.h3.normal};
 }
 
 h4 {
-  font-size: 25px;
+  font-size: ${props => props.theme.sizes.h4.normal};
+  @media${props => props.theme.breakpoints.md}{
+    font-size: ${props => props.theme.sizes.h4.md};
+  }
+  @media${props => props.theme.breakpoints.sm}{
+    font-size: ${props => props.theme.sizes.h4.sm};
+  }
 }
+
 
 ::selection {
     color: white;

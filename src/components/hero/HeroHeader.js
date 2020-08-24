@@ -30,10 +30,15 @@ const ImageWrapper = styled.div`
 `
 const Wrapper = styled.div`
   max-width: 800px;
-  font-size: 25px;
+  font-size: ${props => props.theme.sizes.h4.normal};
   padding: 0 15px;
   z-index: 5;
   align-self: center;
+  @media${props => props.theme.breakpoints.sm}{
+    font-size: ${props => props.theme.sizes.h4.md};
+    max-width: 80%;
+    padding: 0;
+  }
 `
 
 const Description = styled.div`

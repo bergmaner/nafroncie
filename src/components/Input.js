@@ -11,6 +11,9 @@ color: rgba(0,0,0,.8);
 border: 1px solid #fff;
 outline: none;
 width: 70%;
+@media${props => props.theme.breakpoints.sm}{
+width:100%;
+}
 :focus{
   border: 1px solid #000;
 }

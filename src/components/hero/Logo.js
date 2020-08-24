@@ -6,6 +6,10 @@ const LogoContainer = styled.div`
   font-size: 35px;
   padding: 0 0 0 50px;
   font-family: ${props => props.theme.fonts.logo};
+  @media${props => props.theme.breakpoints.sm}{
+    font-size: 25px;
+    padding: 0;
+  }
 `
 const Logo = ({name}) => {
     return(

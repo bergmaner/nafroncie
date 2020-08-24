@@ -16,6 +16,9 @@ const Button = styled.button`
       border: 1px solid #000;
       color: #000;
   }
+  @media${props => props.theme.breakpoints.sm}{
+    width: 100%;
+  }
 `
 
 const SubmitButton = ({onClick}) => {

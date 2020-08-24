@@ -25,6 +25,10 @@ const Informations = styled.ol`
     display: block;
     position: relative;
     counter-increment: inst;
+    @media${props => props.theme.breakpoints.sm}{
+      font-size: 16px;
+      padding-top: 1.75em;
+    }
   }
   li:before {
     content: counter(inst);
@@ -44,7 +48,9 @@ const Informations = styled.ol`
     height: 1.35em;
     width: 1.35em;
     position: absolute;
-    transition: all 0.2s ease-in-out;
+    @media${props => props.theme.breakpoints.sm}{
+      left: -1.3rem;
+    }
   }
 `
 
@@ -61,6 +67,9 @@ const NewsletterContainer = styled.div`
   }
   h4 {
     margin: 7px;
+  }
+  @media${props => props.theme.breakpoints.sm}{
+    padding: 1rem;
   }
 `
 const Info = styled.div`

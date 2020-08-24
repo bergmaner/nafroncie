@@ -29,6 +29,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-mdx`,
@@ -40,8 +41,8 @@ module.exports = {
             options: {
               maxWidth: 1220,
             },
+            
           },
-          `gatsby-plugin-react-helmet`
         ],
       },
     },

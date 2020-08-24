@@ -70,7 +70,7 @@ const ArticleElement = ({ date, title, content, categories, slug }) => {
       </ImageWrapper>
       <ContentWrapper>
         <Header>
-          <h1>{title}</h1>
+          <h2>{title}</h2>
           <Calendar date={date?.split(" ")}/>
         </Header>
         <CategoryList categories = {categories?.split(",")}/>
