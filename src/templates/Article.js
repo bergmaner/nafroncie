@@ -2,12 +2,15 @@ import React from "react"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { MDXProvider } from "@mdx-js/react"
+import {preToCodeBlock} from "mdx-utils"
 import ReactDisqusComments from "react-disqus-comments"
 import Layout from "../components/Layout"
 import Calendar from "../components/Calendar"
 import Title from "../components/mdx/Title"
+import Paragraph from "../components/mdx/Paragraph"
 import H2 from "../components/mdx/H2"
 import Text from "../components/mdx/Text"
+import Code from "../components/mdx/Code"
 import { articlesDescription } from "../config"
 import styled from "styled-components"
 
@@ -38,7 +41,15 @@ const Article = ({ data }) => {
         components={{
           h1: Title,
           h2: H2,
-          div: Text,
+          h4: Text,
+          p: Paragraph,
+          pre: preProps => {
+            const props = preToCodeBlock(preProps)
+            if(props){
+              return <Code {...props} />
+            }
+            return <pre {...preProps} />
+          }
         }}
       >
 <Layout activeIndex={0} name= "Artykuły" description={articlesDescription}>

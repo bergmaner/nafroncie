@@ -20,7 +20,7 @@ const useOpacity = () => {
       }
 
     }
-
+    handleScroll();
     window.addEventListener("scroll", handleScroll)
 
     return () => {
