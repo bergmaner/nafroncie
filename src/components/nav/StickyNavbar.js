@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react"
+import React, { useRef, useState, useEffect } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import usePosition from "../../hooks/usePosition"
@@ -89,6 +89,10 @@ const StickyNavbar = ({ activeIndex }) => {
   )
   const refs = [articlesItem, newsletterItem, aboutItem]
   const { scrollVisible } = useScroll()
+
+  useEffect(()=>{
+    setIndex(activeIndex + 1)
+  },[])
   return (
     <>
       <Nav open={open} scrollVisible={scrollVisible}>

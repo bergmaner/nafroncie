@@ -3,6 +3,7 @@ export const mainDescription =
 export const articlesDescription =
   "Zerknij, może cię zainteresuję jeden z artykułów. Staram się tworzyć kontent, który cię zaciekawi."
 export const newsletterDescription = "Zapisz sie do newslettera, by otrzymywać informacje o nowych artykułach lub ciekawych informacjach o frontendzie."
+export const aboutDescription = "Mam 21 lat, mieszkam niedaleko Katowic. Studiuję apliacje mobilne i webowe w Dąbrowie Górniczej. Więcej informacji o mnie znajdziesz poniżej."
 export const menu = [
   {content: "Artykuły", path: "/articles/1"},
   {content: "Newsletter", path: "/newsletter"},

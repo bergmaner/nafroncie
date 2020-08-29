@@ -105,7 +105,7 @@ const Newsletter = () => {
     if(active === true)setActive(false);
   }, 3000);
   return (
-    <Container>
+    <Container id="newsletter">
       <NewsletterContainer>
         <h2>Zapisz się do Newslettera</h2>
         <h4>Bądź zawsze na bieżąco!</h4>

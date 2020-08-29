@@ -5,7 +5,7 @@ import { newsletterDescription } from "../config"
 
 const NewsletterPage = () => {
   return (
-    <Layout name="Newsletter" description={newsletterDescription} activeIndex={1}>
+    <Layout name="Newsletter" path="#newsletter" description={newsletterDescription} activeIndex={1}>
       <Newsletter/>
     </Layout>
   )
