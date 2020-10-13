@@ -22,7 +22,7 @@ const Description = styled.div`
 
 const About = () => {
   return (
-    <Section>
+    <Section id="omnie">
         <Description>
       Interesuję sie programowaniem od 15 roku życia, zaczynałem od Scratcha
       tworząc w nim proste gierki. Później poznałem język C++, tworzyłem
