@@ -87,7 +87,6 @@ const CloseButton = styled.div`
 `
 
 const Notification = ({ active, status, message, handleClose }) => {
-    console.log(status);
   return (
     <NotificationEl active={active} status={status}>
       <Exclamation status ={status}/>

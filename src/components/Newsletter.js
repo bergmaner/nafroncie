@@ -87,7 +87,7 @@ const Newsletter = () => {
     setActive(true);
     addToMailchimp(email)
       .then(data => {
-        console.log(data)
+
         setStatus(data.result)
         switch (data.result) {
           case "error":

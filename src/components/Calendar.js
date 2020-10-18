@@ -50,7 +50,7 @@ const Card = styled.div`
 `
 
 const Calendar = ({ date }) => {
-  console.log("datee", date)
+
   return (
     <Card>
       <Day>{date[0]}</Day>

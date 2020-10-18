@@ -34,7 +34,6 @@ const Article = ({ data }) => {
   const title = data.mdx.frontmatter.title
   const body = data.mdx.body
   const date = data.mdx.frontmatter.date
-  console.log("im", image)
   return (
     <>
       <MDXProvider

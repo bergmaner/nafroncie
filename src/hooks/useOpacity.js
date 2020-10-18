@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react"
 
 const useOpacity = () => {
   const [opacity, setOpacity] = useState(1);
-  const [zIndex, setZIndex] = useState(0);
+  const [zIndex, setZIndex] = useState(-1);
   const ref = useRef()
 
   useEffect(() => {

@@ -48,6 +48,7 @@ const Description = styled.div`
 
 const HeroHeader = ({ description, name, path }) => {
   const { ref, opacity, zIndex } = useOpacity()
+
   return (
     <Header ref={ref} opacity={opacity} zIndex={zIndex}>
       <ImageWrapper>

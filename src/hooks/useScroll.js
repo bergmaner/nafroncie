@@ -4,7 +4,7 @@ const useScroll = () => {
   const [scrollVisible, setScrollVisible] = useState(false)
   useEffect(() => {
     const handleScroll = () => {
-        console.log(window.scrollY);
+
         if (window.scrollY >= 84) setScrollVisible(true)
         else setScrollVisible(false)
     }

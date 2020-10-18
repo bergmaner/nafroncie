@@ -62,7 +62,6 @@ const ArticleElement = ({ date, title, content, categories, slug }) => {
     }
   }
   `)
-  console.log("date",data.mdx.frontmatter.image.childImageSharp.fluid)
   return (
     <Container>
       <ImageWrapper>
